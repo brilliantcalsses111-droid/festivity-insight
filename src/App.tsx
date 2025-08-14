@@ -5,6 +5,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { DashboardSidebar } from "@/components/DashboardSidebar";
 import Index from "./pages/Index";
+import PreEvent from "./pages/PreEvent";
+import LiveEvent from "./pages/LiveEvent";
+import PostEvent from "./pages/PostEvent";
+import Audience from "./pages/Audience";
+import Venues from "./pages/Venues";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,7 +26,13 @@ const App = () => (
           <main className="flex-1 p-6">
             <Routes>
               <Route path="/" element={<Index />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="/pre-event" element={<PreEvent />} />
+              <Route path="/live" element={<LiveEvent />} />
+              <Route path="/post-event" element={<PostEvent />} />
+              <Route path="/audience" element={<Audience />} />
+              <Route path="/venues" element={<Venues />} />
+              <Route path="/sentiment" element={<Index />} />
+              <Route path="/settings" element={<Settings />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
