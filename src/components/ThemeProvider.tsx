@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-export type Theme = 'default' | 'green' | 'blue' | 'purple' | 'orange' | 'red' | 'pink' | 'yellow';
+export type Theme = 'default' | 'green' | 'blue' | 'purple' | 'orange' | 'red' | 'pink' | 'yellow' | 'discord-dark' | 'discord-violet' | 'discord-pastel' | 'discord-neon';
 export type Mode = 'light' | 'dark';
 
 interface ThemeContextType {

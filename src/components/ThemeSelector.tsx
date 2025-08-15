@@ -5,15 +5,30 @@ import { useTheme, Theme, Mode } from './ThemeProvider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const themes: { name: Theme; color: string; label: string }[] = [
-  { name: 'default', color: 'hsl(260, 73%, 62%)', label: 'Festival Purple' },
-  { name: 'green', color: 'hsl(142, 76%, 36%)', label: 'Forest Green' },
-  { name: 'blue', color: 'hsl(210, 100%, 65%)', label: 'Ocean Blue' },
-  { name: 'purple', color: 'hsl(280, 73%, 62%)', label: 'Royal Purple' },
-  { name: 'orange', color: 'hsl(25, 95%, 53%)', label: 'Sunset Orange' },
-  { name: 'red', color: 'hsl(0, 84%, 60%)', label: 'Cherry Red' },
-  { name: 'pink', color: 'hsl(330, 81%, 60%)', label: 'Cotton Candy' },
-  { name: 'yellow', color: 'hsl(45, 93%, 47%)', label: 'Golden Sun' },
+// Helper function to get gradient end colors for Discord themes  
+const getGradientEndColor = (themeName: string): string => {
+  switch (themeName) {
+    case 'discord-dark': return 'hsl(220, 13%, 18%)'; // #23272A equivalent
+    case 'discord-violet': return 'hsl(271, 100%, 64%)'; // #9945FF equivalent  
+    case 'discord-pastel': return 'hsl(200, 100%, 73%)'; // #77CCFF equivalent
+    case 'discord-neon': return 'hsl(60, 100%, 50%)'; // #FFFF00 equivalent
+    default: return 'hsl(220, 13%, 18%)';
+  }
+};
+
+const themes: { name: Theme; color: string; label: string; description: string }[] = [
+  { name: 'default', color: 'hsl(260, 73%, 62%)', label: 'Festival Purple', description: 'Classic festival vibes with deep purple accents' },
+  { name: 'green', color: 'hsl(142, 76%, 36%)', label: 'Forest Green', description: 'Natural and earthy with vibrant green highlights' },
+  { name: 'blue', color: 'hsl(210, 100%, 65%)', label: 'Ocean Blue', description: 'Cool and calming with ocean-inspired blues' },
+  { name: 'purple', color: 'hsl(280, 73%, 62%)', label: 'Royal Purple', description: 'Elegant and sophisticated purple tones' },
+  { name: 'orange', color: 'hsl(25, 95%, 53%)', label: 'Sunset Orange', description: 'Warm and energetic with sunset colors' },
+  { name: 'red', color: 'hsl(0, 84%, 60%)', label: 'Cherry Red', description: 'Bold and passionate with cherry red accents' },
+  { name: 'pink', color: 'hsl(330, 81%, 60%)', label: 'Cotton Candy', description: 'Sweet and playful with pink highlights' },
+  { name: 'yellow', color: 'hsl(45, 93%, 47%)', label: 'Golden Sun', description: 'Bright and cheerful with golden yellow tones' },
+  { name: 'discord-dark', color: 'hsl(227, 58%, 65%)', label: 'Discord Dark', description: 'Subdued atmospheric feel reminiscent of Discord dark mode' },
+  { name: 'discord-violet', color: 'hsl(235, 85%, 64%)', label: 'Discord Violet', description: 'Bold and vibrant with Discord brand colors' },
+  { name: 'discord-pastel', color: 'hsl(330, 100%, 70%)', label: 'Pastel Rainbow', description: 'Soft and dreamy with pastel rainbow gradients' },
+  { name: 'discord-neon', color: 'hsl(300, 100%, 50%)', label: 'Neon Rainbow', description: 'Electric and bold with neon rainbow effects' },
 ];
 
 const modes: { name: Mode; icon: React.ComponentType<any>; label: string }[] = [
@@ -57,7 +72,7 @@ export const ThemeSelector: React.FC = () => {
           </p>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             {themes.map((themeOption) => (
               <motion.div
                 key={themeOption.name}
@@ -67,16 +82,26 @@ export const ThemeSelector: React.FC = () => {
                 onClick={() => setTheme(themeOption.name)}
               >
                 <div
-                  className="w-16 h-16 rounded-full border-4 border-border flex items-center justify-center transition-all duration-200 hover:border-primary"
-                  style={{ backgroundColor: themeOption.color }}
+                  className="w-20 h-16 rounded-lg border-4 border-border flex items-center justify-center transition-all duration-200 hover:border-primary relative overflow-hidden"
+                  style={{ 
+                    backgroundColor: themeOption.color,
+                    background: themeOption.name.startsWith('discord-') 
+                      ? `linear-gradient(135deg, ${themeOption.color}, ${getGradientEndColor(themeOption.name)})`
+                      : themeOption.color
+                  }}
                 >
                   {theme === themeOption.name && (
-                    <Check className="w-6 h-6 text-white" />
+                    <Check className="w-6 h-6 text-white relative z-10" />
                   )}
                 </div>
-                <p className="text-xs text-center mt-2 text-muted-foreground">
-                  {themeOption.label}
-                </p>
+                <div className="text-center mt-2">
+                  <p className="text-xs font-medium text-foreground">
+                    {themeOption.label}
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {themeOption.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>

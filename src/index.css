@@ -183,6 +183,150 @@ All colors MUST be HSL.
     --shadow-primary: 0 8px 32px hsl(45 93% 47% / 0.2);
     --shadow-glow: 0 0 40px hsl(45 93% 57% / 0.3);
   }
+
+  /* Discord Dark Purple Gradient Theme - Subdued atmospheric feel reminiscent of Discord dark mode */
+  [data-theme="discord-dark"] {
+    --background: 220 13% 18%; /* Deep purple-gray #2C2F33 equivalent */
+    --foreground: 0 0% 98%;
+    --card: 220 13% 20%;
+    --card-foreground: 0 0% 98%;
+    --primary: 227 58% 65%; /* Discord blurple #7289DA */
+    --primary-glow: 227 58% 75%;
+    --secondary: 220 13% 25%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 227 58% 65%;
+    --accent-foreground: 0 0% 98%;
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 9% 46%;
+    --border: 220 13% 25%;
+    --input: 220 13% 25%;
+    --ring: 227 58% 65%;
+    --gradient-dashboard: linear-gradient(135deg, hsl(220, 13%, 20%), hsl(220, 13%, 16%));
+    --gradient-primary: linear-gradient(135deg, hsl(227, 58%, 65%), hsl(227, 58%, 75%));
+    --shadow-primary: 0 8px 32px hsl(227 58% 65% / 0.3);
+    --shadow-glow: 0 0 40px hsl(227 58% 75% / 0.4);
+    --sidebar-background: 220 13% 16%;
+    --sidebar-foreground: 0 0% 88%;
+    --sidebar-primary: 227 58% 65%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 13% 20%;
+    --sidebar-accent-foreground: 0 0% 88%;
+    --sidebar-border: 220 13% 25%;
+  }
+
+  /* Discord Bright Violet Gradient Theme - Bold and vibrant with Discord brand colors */
+  [data-theme="discord-violet"] {
+    --background: 235 85% 64%; /* #5865F2 equivalent */
+    --foreground: 0 0% 98%;
+    --card: 235 85% 70%;
+    --card-foreground: 0 0% 98%;
+    --primary: 227 58% 65%; /* Discord blurple for contrast */
+    --primary-glow: 227 58% 75%;
+    --secondary: 271 100% 64%; /* #9945FF equivalent */
+    --secondary-foreground: 0 0% 98%;
+    --accent: 227 58% 65%;
+    --accent-foreground: 0 0% 98%;
+    --muted: 235 85% 74%;
+    --muted-foreground: 235 85% 25%;
+    --border: 235 85% 80%;
+    --input: 235 85% 80%;
+    --ring: 227 58% 65%;
+    --gradient-dashboard: linear-gradient(135deg, hsl(235, 85%, 64%), hsl(271, 100%, 64%));
+    --gradient-primary: linear-gradient(135deg, hsl(227, 58%, 65%), hsl(227, 58%, 75%));
+    --shadow-primary: 0 8px 32px hsl(227 58% 65% / 0.3);
+    --shadow-glow: 0 0 40px hsl(227 58% 75% / 0.4);
+    --sidebar-background: 235 85% 60%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 227 58% 65%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 235 85% 70%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 235 85% 80%;
+  }
+
+  /* Discord Pastel Rainbow Gradient Theme - Soft and dreamy with pastel rainbow gradients */
+  [data-theme="discord-pastel"] {
+    --background: 0 0% 98%;
+    --foreground: 220 13% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    --primary: 330 100% 70%; /* Pastel pink #FF66AA equivalent */
+    --primary-glow: 330 100% 80%;
+    --secondary: 140 60% 75%; /* Pastel mint equivalent */
+    --secondary-foreground: 220 13% 18%;
+    --accent: 200 100% 73%; /* Light blue #77CCFF equivalent */
+    --accent-foreground: 220 13% 18%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 220 9% 46%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 330 100% 70%;
+    --gradient-dashboard: linear-gradient(135deg, hsl(330, 100%, 88%), hsl(140, 60%, 85%), hsl(200, 100%, 83%));
+    --gradient-primary: linear-gradient(135deg, hsl(330, 100%, 70%), hsl(330, 100%, 80%));
+    --shadow-primary: 0 8px 32px hsl(330 100% 70% / 0.3);
+    --shadow-glow: 0 0 40px hsl(330 100% 80% / 0.4);
+    --sidebar-background: 0 0% 96%;
+    --sidebar-foreground: 220 13% 18%;
+    --sidebar-primary: 330 100% 70%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 92%;
+    --sidebar-accent-foreground: 220 13% 18%;
+    --sidebar-border: 0 0% 88%;
+  }
+
+  [data-theme="discord-pastel"].light {
+    --background: 0 0% 98%;
+    --foreground: 220 13% 18%;
+  }
+
+  [data-theme="discord-pastel"].dark {
+    --background: 220 13% 12%;
+    --foreground: 0 0% 98%;
+    --card: 220 13% 15%;
+    --card-foreground: 0 0% 98%;
+    --secondary-foreground: 0 0% 98%;
+    --accent-foreground: 0 0% 98%;
+    --muted: 220 13% 18%;
+    --muted-foreground: 220 9% 65%;
+    --border: 220 13% 25%;
+    --input: 220 13% 25%;
+    --gradient-dashboard: linear-gradient(135deg, hsl(330, 100%, 25%), hsl(140, 60%, 25%), hsl(200, 100%, 25%));
+    --sidebar-background: 220 13% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-accent: 220 13% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 13% 25%;
+  }
+
+  /* Discord Neon Rainbow Gradient Theme - Electric and bold with neon rainbow effects */
+  [data-theme="discord-neon"] {
+    --background: 220 13% 10%;
+    --foreground: 0 0% 100%;
+    --card: 220 13% 12%;
+    --card-foreground: 0 0% 100%;
+    --primary: 0 0% 100%; /* White for contrast against neon */
+    --primary-glow: 0 0% 90%;
+    --secondary: 300 100% 50%; /* Neon magenta #FF00FF equivalent */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 180 100% 50%; /* Neon cyan #00FFFF equivalent */
+    --accent-foreground: 220 13% 10%;
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 9% 65%;
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --ring: 0 0% 100%;
+    --gradient-dashboard: linear-gradient(90deg, hsl(300, 100%, 50%), hsl(180, 100%, 50%), hsl(60, 100%, 50%));
+    --gradient-primary: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 0%, 90%));
+    --shadow-primary: 0 8px 32px hsl(0 0% 100% / 0.3);
+    --shadow-glow: 0 0 40px hsl(300 100% 50% / 0.6), 0 0 60px hsl(180 100% 50% / 0.4);
+    --sidebar-background: 220 13% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 220 13% 10%;
+    --sidebar-accent: 220 13% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 13% 20%;
+  }
 }
 
 @layer base {
@@ -191,7 +335,8 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-all duration-500 ease-in-out;
+    background: var(--gradient-dashboard, hsl(var(--background)));
   }
 }
 
