@@ -37,6 +37,7 @@ export const DashboardSidebar = () => {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
+      data-tour="sidebar"
     >
       {/* Header */}
       <div className="p-6 border-b border-border">

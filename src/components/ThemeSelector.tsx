@@ -40,7 +40,7 @@ export const ThemeSelector: React.FC = () => {
   const { theme, mode, setTheme, setMode } = useTheme();
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" data-tour="theme-selector">
       {/* Mode Selection */}
       <Card>
         <CardHeader>

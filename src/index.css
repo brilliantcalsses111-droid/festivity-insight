@@ -338,6 +338,26 @@ All colors MUST be HSL.
     @apply bg-background text-foreground transition-all duration-500 ease-in-out;
     background: var(--gradient-dashboard, hsl(var(--background)));
   }
+
+  /* Responsive design improvements */
+  @media (max-width: 768px) {
+    .festival-card {
+      @apply p-4;
+    }
+    
+    .metric-card {
+      @apply p-4;
+    }
+  }
+
+  /* WCAG compliant color contrast improvements */
+  [data-theme="discord-violet"] {
+    --foreground: 0 0% 5%; /* Darker text for better contrast on bright backgrounds */
+  }
+
+  [data-theme="discord-pastel"].light {
+    --foreground: 220 13% 5%; /* Ensure adequate contrast */
+  }
 }
 
 /* Custom festival components */
